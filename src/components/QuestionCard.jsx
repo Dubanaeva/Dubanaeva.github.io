@@ -29,4 +29,4 @@ export default function QuestionCard(props) {
             <AnswerButtonsGrid buttons={props.buttons} />
         </div>
     )
-} 
+}

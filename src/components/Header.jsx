@@ -2,31 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-
-const HEADER_ITEMS = [
-    {
-        "name": "Главная",
-        "url": "/"
-    },
-    {
-        "name": "Тесты",
-        "url": "/tests",
-    }
-]
-
-
 export default function Header() {
     return (
-        <div className="w-full h-14 bg-violet-300 flex justify-center">
-            <ul className="flex h-full w-1/2 gap-x-4">
-                {HEADER_ITEMS.map(item => (
-                    <Link className="block h-full flex items-center" to={item.url}>
-                        <li className="font-semibold text-lg">
-                            {item.name}
-                        </li>
-                    </Link>
-                ))}
-            </ul>
+        <div className="w-full px-4 h-14 bg-white flex justify-between items-center drop-shadow-md sticky top-0">
+            <Link className="font-semibold text-lg" to='/'>Главная</Link>
+            <Link className="font-semibold text-lg" to='/profile'>
+                <div className="px-3 py-2 bg-emerald-400 text-white rounded-md">
+                    Профиль
+                </div>
+            </Link>
         </div>
     )
 }
