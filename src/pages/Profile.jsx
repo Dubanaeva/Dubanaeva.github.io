@@ -1,8 +1,7 @@
 import React from "react";
 import PersonalInfoPreview from "../components/PersonalInfoPreview";
 import Header from '../components/Header'
-import { Link } from "react-router-dom";
-import { ImProfile } from "react-icons/im";
+
 
 
 export default function Profile() {
