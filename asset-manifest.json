@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Dubanaeva.github.io/static/css/main.073c9b0a.css",
+    "main.js": "/Dubanaeva.github.io/static/js/main.0366280d.js",
+    "index.html": "/Dubanaeva.github.io/index.html",
+    "main.073c9b0a.css.map": "/Dubanaeva.github.io/static/css/main.073c9b0a.css.map",
+    "main.0366280d.js.map": "/Dubanaeva.github.io/static/js/main.0366280d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.0366280d.js"
+  ]
+}
