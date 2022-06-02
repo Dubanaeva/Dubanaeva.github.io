@@ -1,5 +1,5 @@
 import React from "react";
-import Quiz from "./Quiz";
+import QuizPreview from "./QuizPreview";
 import { RiEmotionSadLine } from 'react-icons/ri'
 import { getNewQuizzes } from "../services/QuizzesService";
 
@@ -14,7 +14,7 @@ export default function NewQuizzes() {
             )}
             {newQuizzes.map(quiz => (
                 <div className="my-4">
-                    <Quiz thumbnailUrl={quiz.thumbnail_url} title={quiz.title} id={quiz.id} likes={quiz.likes} questionsAmount={quiz.questions_amount} />
+                    <QuizPreview thumbnailUrl={quiz.thumbnail_url} title={quiz.title} id={quiz.id} likes={quiz.likes} questionsAmount={quiz.questions_amount} />
                 </div>
             ))}
         </div>

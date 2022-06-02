@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
-export default function Quiz(props) {
+export default function QuizPreview(props) {
     return (
         <Link to={`/quiz/${props.id}`}>
             <div className="bg-white drop-shadow-sm border border-zinc-200 flex rounded-md">
                 <div className="w-1/4">
-                    <img className="rounded-l-md w-full" width={100} height={100} src={props.thumbnailUrl} alt='quiz thumbnail' />
+                    <img className="rounded-l-md w-full" width={100} height={100} src={props.thumbnailUrl}
+                         alt='quiz thumbnail'/>
                 </div>
                 <div className="w-3/4 flex flex-col justify-between">
                     <div className="text-lg font-bold px-3 py-2">

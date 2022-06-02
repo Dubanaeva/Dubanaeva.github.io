@@ -1,21 +1,38 @@
 import React from 'react'
 import Header from '../components/Header'
 import QuizCard from '../components/quizzes/QuizCard'
+import {Container, Grid, Skeleton, Paper} from "@mui/material";
+import {useQuizzesRequest} from "../hooks/useQuizzesRequest";
 
 
 export default function QuizzesPage() {
+    const quizzes = useQuizzesRequest()
+    if (!quizzes) {
+        return (
+            <>
+                <Header/>
+                <Container>
+                    <Skeleton animation="wave"/>
+                    <Skeleton animation="wave"/>
+                    <Skeleton animation="wave"/>
+                    <Skeleton animation="wave"/>
+                    <Skeleton animation="wave"/>
+                </Container>
+            </>
+        )
+    }
     return (
-        <div className='w-full h-screen'>
-            <Header />
-            <div className='mt-12 mx-auto md:w-3/5 md:px-0 px-6 w-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 md:gap-4 gap-y-8'>
-                <QuizCard imageUrl="https://picsum.photos/300/200" title="hello"/>
-                <QuizCard imageUrl="https://picsum.photos/300/200" title="hello"/>
-                <QuizCard imageUrl="https://picsum.photos/300/200" title="hello"/>
-                <QuizCard imageUrl="https://picsum.photos/300/200" title="hello"/>
-                <QuizCard imageUrl="https://picsum.photos/300/200" title="hello"/>
-                <QuizCard imageUrl="https://picsum.photos/300/200" title="hello"/>
-                <QuizCard imageUrl="https://picsum.photos/300/200" title="hello"/>
-            </div>
-        </div>
+        <>
+            <Header/>
+            <Container sx={{paddingY: 4, paddingX: {xs: 3, md: 0}}}>
+                <Grid container gap={2} justifyContent='space-between'>
+                    {quizzes.map(quiz => (
+                        <Grid item md={3} xs={12}>
+                            <QuizCard quizId={quiz.id} imageUrl={quiz.thumbnail_url} title={quiz.name}/>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+        </>
     )
 }
